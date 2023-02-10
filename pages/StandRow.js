@@ -9,11 +9,15 @@ export default function CookieStandRow({ info, deleteStand, index }) {
   }
 
   return (
-    <tr className={`border border-emerald-700 text-right ${index % 2 === 0 ? 'bg-emerald-300' : 'bg-emerald-400'}`}>
-      <td>
-        {info.location}{' '}
+    <tr
+      className={`border border-emerald-700 text-right ${
+        index % 2 === 0 ? 'bg-emerald-300' : 'bg-emerald-400'
+      }`}
+    >
+      <td className="flex justify-between p-3">
+        <div>{info.location}</div>
         <button onClick={clickHandler}>
-          <svg
+        <svg
             xmlns="http://www.w3.org/2000/svg"
             width="10"
             height="10"
@@ -33,5 +37,4 @@ export default function CookieStandRow({ info, deleteStand, index }) {
       <td>{info.hourly_sales.reduce((num, sum) => num + sum, 0)}</td>
     </tr>
   );
-
 }
